@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You, My Forever Story 💕</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<button id="musicBtn" title="Music (6:02)">🔇</button>
+
+
+<div class="floating-hearts-container"></div>
+<div class="sparkles-bg"></div>
+
+
+<section class="scene active" id="scene1" data-theme="gold" data-duration="4000">
+  <div class="text-scene">
+    <div class="text-center">
+      <h1 class="typing-text">Hey love…</h1>
+      <p class="typing-text-2">I made something special for you.</p>
+      <p class="typing-text-3">This is our story. 💕</p>
+    </div>
+    <button class="glow-btn next">Tap gently ❤️</button>
+  </div>
+</section>
+
+
+<section class="scene" id="scene2" data-theme="rose" data-duration="4000">
+  <div class="image-scene">
+    <img src="images/img1.jpg" alt="First moment" class="scene-bg-img">
+    <div class="scene-overlay"></div>
+    <div class="overlay-text">
+      <h2 class="overlay-title">The First Time I Saw You</h2>
+      <p class="overlay-message">Time stopped. My heart knew before my mind did.</p>
+    </div>
+    <button class="glow-btn next">Next ❤️</button>
+  </div>
+</section>
+
+
+<section class="scene" id="scene3" data-theme="sunset" data-duration="4000">
+  <div class="image-scene">
+    <img src="images/img2.jpg" alt="Your smile" class="scene-bg-img">
+    <div class="scene-overlay"></div>
+    <div class="overlay-text">
+      <h2 class="overlay-title">That Smile</h2>
+      <p class="overlay-message">The world fades away when you smile at me like that.</p>
+    </div>
+    <button class="glow-btn next">Next ❤️</button>
+  </div>
+</section>
+
+
+<section class="scene" id="scene4" data-theme="lavender" data-duration="4000">
+  <div class="image-scene">
+    <img src="images/img3.jpg" alt="Quiet moments" class="scene-bg-img">
+    <div class="scene-overlay"></div>
+    <div class="overlay-text">
+      <h2 class="overlay-title">Quiet Moments With You</h2>
+      <p class="overlay-message">The best moments don't need words, just your presence.</p>
+    </div>
+    <button class="glow-btn next">Next ❤️</button>
+  </div>
+</section>
+
+
+<section class="scene" id="scene5" data-theme="cosmic" data-duration="6000">
+  <div class="galaxy-scene">
+    <canvas id="galaxyCanvas"></canvas>
+    <div class="galaxy-content">
+      <img src="images/img8.jpg" alt="Universe" class="galaxy-img">
+      
+      
+      <div class="floating-universe-images">
+        <img src="images/img1.jpg" alt="Memory 1" class="universe-photo" style="--position: 0">
+        <img src="images/img2.jpg" alt="Memory 2" class="universe-photo" style="--position: 1">
+        <img src="images/img3.jpg" alt="Memory 3" class="universe-photo" style="--position: 2">
+        <img src="images/img4.jpg" alt="Memory 4" class="universe-photo" style="--position: 3">
+        <img src="images/img5.jpg" alt="Memory 5" class="universe-photo" style="--position: 4">
+        <img src="images/img6.jpg" alt="Memory 6" class="universe-photo" style="--position: 5">
+        <img src="images/img7.jpg" alt="Memory 7" class="universe-photo" style="--position: 6">
+        <img src="images/img9.jpg" alt="Memory 8" class="universe-photo" style="--position: 7">
+      </div>
+      
+      
+      <div class="galaxy-text">
+        <p class="galaxy-line-1">In a universe full of stars…</p>
+        <p class="galaxy-line-2">…you are my constellation.</p>
+        <p class="galaxy-line-3">My reason, my destination.</p>
+      </div>
+    </div>
+    <button class="glow-btn next">Next</button>
+  </div>
+</section>
+
+
+<section class="scene" id="scene6" data-theme="ocean" data-duration="4000">
+  <div class="image-scene">
+    <img src="images/img9.jpg" alt="Adventures" class="scene-bg-img">
+    <div class="scene-overlay"></div>
+    <div class="overlay-text">
+      <h2 class="overlay-title">Every Adventure With You</h2>
+      <p class="overlay-message">You make the ordinary moments feel like extraordinary journeys.</p>
+    </div>
+    <button class="glow-btn next">Next ❤️</button>
+  </div>
+</section>
+
+<!-- ===== SCENE 7: Slideshow Gallery — 8 seconds ===== -->
+<section class="scene" id="scene7" data-theme="pink" data-duration="8000">
+  <div class="gallery-scene">
+    <div class="slideshow-wrap">
+      <img id="slideshow" src="images/img5.jpg" alt="Memory" class="slide-image">
+      <div class="petals-container"></div>
+    </div>
+    <p id="caption" class="slide-caption">Every memory with you is treasured forever.</p>
+    <button class="glow-btn next">Next</button>
+  </div>
+</section>
+
+<!-- ===== SCENE 8: Full Image Scene — img6.jpg — 4 seconds ===== -->
+<section class="scene" id="scene8" data-theme="peach" data-duration="4000">
+  <div class="image-scene">
+    <img src="images/img9.jpg" alt="Laughter" class="scene-bg-img">
+    <div class="scene-overlay"></div>
+    <div class="overlay-text">
+      <h2 class="overlay-title">Your Laughter is My Favorite Song</h2>
+      <p class="overlay-message">You fill my days with light and endless joy.</p>
+    </div>
+    <button class="glow-btn next">Next ❤️</button>
+  </div>
+</section>
+
+<!-- ===== SCENE 9: Heartbeat Interactive — 7 seconds ===== -->
+<section class="scene" id="scene9" data-theme="crimson" data-duration="7000">
+  <div class="heartbeat-scene">
+    <div class="pulse-glow"></div>
+    <div class="heart-wrapper">
+      <div class="heart-shape"></div>
+      <img id="heart-img" src="images/img7.jpg" alt="Heartbeat" class="heart-photo">
+    </div>
+    <div class="heartbeat-text">
+      <p class="beat-line-1">Every beat…</p>
+      <p class="beat-line-2">…whispers your name.</p>
+      <p class="beat-line-3">You are my heartbeat.</p>
+    </div>
+    <button class="glow-btn next">Next</button>
+  </div>
+</section>
+
+<!-- ===== SCENE 10: Love Letter Interactive — 8 seconds ===== -->
+<section class="scene" id="scene10" data-theme="mauve" data-duration="8000">
+  <div class="letter-scene">
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope"></div>
+      <div class="letter-box" id="letterContent">
+        <div class="letter-icon">💌</div>
+        <div class="letter-body">
+          <p class="letter-greeting">My Dearest,</p>
+          <p>Words fail me when I try to describe what you mean to me.</p>
+          <p>In every moment with you, I find reasons to believe in forever.</p>
+          <p>You are my peace when the world is chaos,<br>my light when everything feels dark,<br>and my home no matter where we are.</p>
+          <p>I love not just who you are today,<br>but who you help me become.</p>
+          <div class="letter-photos">
+            <img src="images/img9.jpg" alt="Memory 1" class="letter-photo">
+            <img src="images/img10.jpg" alt="Memory 2" class="letter-photo">
+            <img src="images/img11.jpg" alt="Memory 3" class="letter-photo">
+          </div>
+          <p class="letter-sign">Forever yours, always,<br><span class="letter-heart">💕</span></p>
+        </div>
+      </div>
+    </div>
+    <button class="glow-btn next">Next</button>
+  </div>
+</section>
+
+<!-- ===== SCENE 11: The Final Promise — Constellation of Memories ===== -->
+<section class="scene" id="scene11" data-theme="gold-final" data-duration="25000">
+  <div class="constellation-scene">
+    <!-- Central core glow effect -->
+    <div class="constellation-core" id="constellationCore"></div>
+    
+    <!-- Main constellation container -->
+    <div class="constellation-stage" id="constellationStage">
+      <!-- SVG for connecting lines -->
+      <svg id="constellationSVG" class="constellation-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="const-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <radialGradient id="memoryGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:0.6" />
+          </radialGradient>
+        </defs>
+        <g id="connectionLines" class="connection-lines"></g>
+      </svg>
+
+      <!-- Memory photos arranged as constellation points -->
+      <div class="constellation-photos" id="constellationPhotos">
+        <img src="images/img1.jpg" class="constellation-photo" alt="memory1" data-index="0">
+        <img src="images/img2.jpg" class="constellation-photo" alt="memory2" data-index="1">
+        <img src="images/img3.jpg" class="constellation-photo" alt="memory3" data-index="2">
+        <img src="images/img4.jpg" class="constellation-photo" alt="memory4" data-index="3">
+        <img src="images/img5.jpg" class="constellation-photo" alt="memory5" data-index="4">
+        <img src="images/img6.jpg" class="constellation-photo" alt="memory6" data-index="5">
+        <img src="images/img7.jpg" class="constellation-photo" alt="memory7" data-index="6">
+        <img src="images/img8.jpg" class="constellation-photo" alt="memory8" data-index="7">
+        <img src="images/img9.jpg" class="constellation-photo" alt="memory9" data-index="8">
+        <img src="images/img10.jpg" class="constellation-photo" alt="memory10" data-index="9">
+        <img src="images/img11.jpg" class="constellation-photo" alt="memory11" data-index="10">
+      </div>
+
+      <!-- Floating particles -->
+      <div class="constellation-particles" id="constellationParticles"></div>
+
+      <!-- Final greeting -->
+      <div class="constellation-greeting" id="constellationGreeting">
+        <h1>✨ Happy New Year ✨</h1>
+        <p class="greeting-sub">Our love is written in the stars—a constellation of endless moments.</p>
+      </div>
+    </div>
+
+    <div class="final-controls">
+      <button class="glow-btn replay" onclick="location.reload()">🔄 Replay</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 12: The Final Promise (keeps the long closing duration) ===== -->
+<section class="scene" id="scene12" data-theme="gold-final" data-duration="295000">
+  <div class="final-scene">
+    <div class="photos-shower" id="floatingPhotos">
+      <img src="images/img1.jpg" alt="Memory 1" class="shower-photo">
+      <img src="images/img2.jpg" alt="Memory 2" class="shower-photo">
+      <img src="images/img3.jpg" alt="Memory 3" class="shower-photo">
+      <img src="images/img4.jpg" alt="Memory 4" class="shower-photo">
+      <img src="images/img5.jpg" alt="Memory 5" class="shower-photo">
+      <img src="images/img6.jpg" alt="Memory 6" class="shower-photo">
+      <img src="images/img7.jpg" alt="Memory 7" class="shower-photo">
+      <img src="images/img8.jpg" alt="Memory 8" class="shower-photo">
+      <img src="images/img9.jpg" alt="Memory 9" class="shower-photo">
+      <img src="images/img10.jpg" alt="Memory 10" class="shower-photo">
+      <img src="images/img11.jpg" alt="Memory 11" class="shower-photo">
+    </div>
+    <div class="final-heart-glow"></div>
+    <div class="final-content">
+      <h1 class="final-declaration">I Choose You</h1>
+      <p class="final-message">Always have. Always will.</p>
+      <p class="final-thanks">Thank you for being my everything. I love you. 💕</p>
+      <p class="final-quote">Here's to our forever story...</p>
+    </div>
+    <button class="glow-btn replay" onclick="location.reload()">🔄 Replay</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
