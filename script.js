@@ -2,6 +2,7 @@
 
 const scenes = document.querySelectorAll('.scene');
 const nextBtns = document.querySelectorAll('.next');
+const prevBtns = document.querySelectorAll('.prev');
 const music = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createSparkles();
     setupMusicButton();
     autoPlaySequence();
+    updateNavButtons();
   } catch (e) {
     console.error('Init:', e);
   }
@@ -26,12 +28,30 @@ function showScene(index) {
   scenes[current].classList.remove('active');
   current = index;
   scenes[current].classList.add('active');
+  updateNavButtons();
   
+  // Scene index is 0-based, but scenes in HTML are numbered starting from 1
+  // So scene5 (galaxy) = index 4, scene7 (slideshow) = index 6, etc.
   if (index === 4) setTimeout(() => initGalaxy(), 100);
   if (index === 6) startSlideshow();
   if (index === 8) createHeartPhotos();
   if (index === 9) envelopeAnimation();
   if (index === 10) startConstellationAnimation();
+  if (index === 12) startMemoryLaneAnimation(); // Scene 13 in HTML = index 12
+  if (index === 16) setTimeout(() => initParticleHeart(), 100); // Scene 17
+  if (index === 17) setTimeout(() => initPolaroidAnimation(), 100); // Scene 18
+  if (index === 18) setTimeout(() => initEndingSparkles(), 100); // Scene 19
+}
+
+function updateNavButtons() {
+  // Show/hide prev buttons based on current scene
+  prevBtns.forEach((btn, idx) => {
+    if (current > 0) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
 }
 
 function setupNavigation() {
@@ -55,6 +75,13 @@ function setupNavigation() {
     });
   });
 
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      autoPlayActive = false;
+      if (current > 0) showScene(current - 1);
+    });
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ') {
       autoPlayActive = false;
@@ -68,7 +95,7 @@ function setupNavigation() {
 
 
 function startAutoPlayFromScene2() {
-  const timing = [4000, 4000, 4000, 4000, 6000, 4000, 8000, 4000, 7000, 8000, 25000];
+  const timing = [4000, 4000, 4000, 4000, 6000, 4000, 8000, 4000, 7000, 8000, 25000, 15000, 12000, 13000, 14000];
   let idx = 1;
   autoPlayActive = true;
 
@@ -86,7 +113,7 @@ function startAutoPlayFromScene2() {
 
 
 function autoPlaySequence() {
-  const timing = [4000, 4000, 4000, 4000, 6000, 4000, 8000, 4000, 7000, 8000, 25000];
+  const timing = [4000, 4000, 4000, 4000, 6000, 4000, 8000, 4000, 7000, 8000, 25000, 15000, 12000, 13000, 14000];
   let idx = 0;
 
   function advance() {
@@ -307,43 +334,43 @@ function startConstellationAnimation() {
   
   if (!stage || photos.length === 0) return;
 
-  // Reset
+
   photos.forEach(p => { p.style.opacity = 0; });
   greeting.classList.remove('show');
   particleContainer.innerHTML = '';
   if (core) core.classList.remove('glow-pulse');
 
-  // Calculate constellation positions (responsive to screen size)
+
   const rect = stage.getBoundingClientRect();
   const centerX = rect.width / 2;
   const centerY = rect.height / 2;
   
-  // Mobile-responsive radius
+  
   const isMobile = window.innerWidth <= 480;
   const isTablet = window.innerWidth <= 768;
   const baseRadius = isMobile ? Math.min(rect.width, rect.height) * 0.15 : isTablet ? Math.min(rect.width, rect.height) * 0.2 : Math.min(rect.width, rect.height) * 0.25;
   
-  // Predefined positions for star-like arrangement
+  
   const positions = [
-    { x: centerX, y: centerY - baseRadius, angle: 0 }, // top
+    { x: centerX, y: centerY - baseRadius, angle: 0 },
     { x: centerX + baseRadius * 0.866, y: centerY - baseRadius * 0.5, angle: 60 },
     { x: centerX + baseRadius * 0.866, y: centerY + baseRadius * 0.5, angle: 120 },
-    { x: centerX, y: centerY + baseRadius, angle: 180 }, // bottom
+    { x: centerX, y: centerY + baseRadius, angle: 180 }, 
     { x: centerX - baseRadius * 0.866, y: centerY + baseRadius * 0.5, angle: 240 },
     { x: centerX - baseRadius * 0.866, y: centerY - baseRadius * 0.5, angle: 300 },
     { x: centerX + baseRadius * 0.5, y: centerY - baseRadius * 0.3, angle: 30 },
     { x: centerX + baseRadius * 0.5, y: centerY + baseRadius * 0.3, angle: 150 },
     { x: centerX - baseRadius * 0.5, y: centerY + baseRadius * 0.3, angle: 210 },
     { x: centerX - baseRadius * 0.5, y: centerY - baseRadius * 0.3, angle: 270 },
-    { x: centerX, y: centerY, angle: 0 } // center
+    { x: centerX, y: centerY, angle: 0 } 
   ];
 
-  // Animate core glow
+ 
   if (core) {
     setTimeout(() => core.classList.add('glow-pulse'), 200);
   }
 
-  // Animate photos to constellation positions
+ 
   photos.forEach((photo, i) => {
     const pos = positions[i % positions.length];
     const delay = i * 150 + 300;
@@ -356,25 +383,25 @@ function startConstellationAnimation() {
     }, delay);
   });
 
-  // Draw constellation connections after photos are in place
+  
   setTimeout(() => {
     drawConstellationLines(photos, positions, svg);
     createConstellationParticles(particleContainer, isMobile ? 40 : 80);
   }, 800 + photos.length * 150);
 
-  // Fade out photos and show greeting
+  
   const fadeOutDelay = 2200 + photos.length * 150;
   setTimeout(() => {
-    // Fade out all photos
+   
     photos.forEach(photo => {
       photo.style.transition = 'opacity 1s ease-out';
       photo.style.opacity = 0;
     });
     
-    // Show greeting after photos fade
+    
     setTimeout(() => {
       greeting.classList.add('show');
-      // Auto advance after display
+      
       setTimeout(() => {
         if (current < scenes.length - 1) showScene(current + 1);
       }, 8000);
@@ -387,7 +414,7 @@ function drawConstellationLines(photos, positions, svg) {
   const g = svg.getElementById('connectionLines');
   if (!g) return;
   
-  // Draw lines between nearby photos
+  
   const lines = [
     [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
     [0, 6], [1, 7], [2, 8], [3, 9], [4, 5],
@@ -458,12 +485,154 @@ function createBloomHearts(container, total=30){
   }, 120);
 }
 
+// ===== NEW SCENE ANIMATIONS =====
+
+function startMemoryLaneAnimation() {
+  const wheel = document.getElementById('memoryWheel');
+  if (!wheel) return;
+  
+  // Memory wheel is already spinning via CSS, nothing extra needed
+  // Optional: Add interactive hover effects if needed
+}
+
+// ===== SCENE 17: 3D PARTICLE HEART ANIMATION =====
+function initParticleHeart() {
+  const canvas = document.getElementById('particleCanvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  const particles = [];
+  const particleCount = 150;
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  
+  class Particle {
+    constructor() {
+      this.angle = Math.random() * Math.PI * 2;
+      this.radius = Math.random() * 200 + 50;
+      this.x = centerX + Math.cos(this.angle) * this.radius;
+      this.y = centerY + Math.sin(this.angle) * this.radius;
+      this.size = Math.random() * 3 + 1;
+      this.speedX = (Math.random() - 0.5) * 2;
+      this.speedY = (Math.random() - 0.5) * 2;
+      this.color = `hsla(${Math.random() * 60 + 320}, 100%, ${Math.random() * 30 + 60}%, 0.8)`;
+      this.targetAngle = this.angle;
+      this.targetRadius = this.radius;
+    }
+    
+    update() {
+      // Heart shape formula
+      const t = Date.now() * 0.001;
+      this.targetAngle += 0.02;
+      const heartX = 16 * Math.pow(Math.sin(this.targetAngle), 3);
+      const heartY = -(13 * Math.cos(this.targetAngle) - 5 * Math.cos(2 * this.targetAngle) - 2 * Math.cos(3 * this.targetAngle) - Math.cos(4 * this.targetAngle));
+      
+      this.x += (centerX + heartX * 12 - this.x) * 0.05;
+      this.y += (centerY + heartY * 12 - this.y) * 0.05;
+      
+      this.size = 2 + Math.sin(t + this.angle * 10) * 1.5;
+    }
+    
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      
+      // Glow effect
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+  
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+  
+  function animate() {
+    if (!scenes[16] || !scenes[16].classList.contains('active')) return;
+    
+    ctx.fillStyle = 'rgba(15, 10, 30, 0.1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+}
+
+// ===== SCENE 18: POLAROID ANIMATION =====
+function initPolaroidAnimation() {
+  const cards = document.querySelectorAll('.polaroid-card');
+  if (!cards.length) return;
+  
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.style.animation = 'polaroid-appear 0.8s ease-out forwards';
+      card.style.animationDelay = (index * 0.2) + 's';
+    }, 100);
+  });
+}
+
+// Add CSS for polaroid appear animation
+const polaroidStyle = document.createElement('style');
+polaroidStyle.textContent = `
+  @keyframes polaroid-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px) rotate(0deg) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotate(var(--rotation, 0deg)) scale(1);
+    }
+  }
+  .polaroid-card:nth-child(1) { --rotation: -15deg; }
+  .polaroid-card:nth-child(2) { --rotation: 8deg; }
+  .polaroid-card:nth-child(3) { --rotation: -5deg; }
+  .polaroid-card:nth-child(4) { --rotation: 12deg; }
+`;
+document.head.appendChild(polaroidStyle);
+
+// ===== SCENE 19: ENDING SPARKLES =====
+function initEndingSparkles() {
+  const container = document.getElementById('endingSparkles');
+  if (!container) return;
+  
+  setInterval(() => {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = Math.random() * 100 + '%';
+    sparkle.style.top = Math.random() * 100 + '%';
+    sparkle.style.animationDuration = (Math.random() * 2 + 1) + 's';
+    container.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 3000);
+  }, 200);
+}
+
 window.addEventListener('resize', () => {
   const canvas = document.getElementById('galaxyCanvas');
-  if (canvas && scenes[4].classList.contains('active')) {
+  if (canvas && scenes[4] && scenes[4].classList.contains('active')) {
     try { initGalaxy(); } catch (e) {}
+  }
+  
+  const particleCanvas = document.getElementById('particleCanvas');
+  if (particleCanvas && scenes[16] && scenes[16].classList.contains('active')) {
+    try { initParticleHeart(); } catch (e) {}
   }
 });
 
-console.log('💕 You, My Forever Story - 11 Scenes (362 seconds)');
+console.log('💕 You, My Forever Story - 19 Scenes (Epic Love Story Unfolds)');
 console.log('🎵 Music: 6:02 | 🎬 Press Next or use Arrow Keys');
+console.log('✨ New scenes: Memory Lane, Timeline, Love Notes, Particle Heart, Polaroids & Ending');
