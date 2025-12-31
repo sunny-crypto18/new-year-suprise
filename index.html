@@ -22,14 +22,16 @@
 <div class="sparkles-bg"></div>
 
 
-<section class="scene active" id="scene1" data-theme="gold" data-duration="4000">
+<section class="scene active" id="scene1" data-theme="gold" data-duration="8000">
   <div class="text-scene">
     <div class="text-center">
       <h1 class="typing-text">Hey love…</h1>
       <p class="typing-text-2">I made something special for you.</p>
       <p class="typing-text-3">This is our story. 💕</p>
     </div>
-    <button class="glow-btn next">Tap gently ❤️</button>
+    <div class="nav-buttons first-scene-nav">
+      <button class="glow-btn next begin-journey">💕 Begin Our Journey 💕</button>
+    </div>
   </div>
 </section>
 
@@ -42,7 +44,10 @@
       <h2 class="overlay-title">The First Time I Saw You</h2>
       <p class="overlay-message">Time stopped. My heart knew before my mind did.</p>
     </div>
-    <button class="glow-btn next">Next ❤️</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
@@ -55,7 +60,10 @@
       <h2 class="overlay-title">That Smile</h2>
       <p class="overlay-message">The world fades away when you smile at me like that.</p>
     </div>
-    <button class="glow-btn next">Next ❤️</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
@@ -68,7 +76,10 @@
       <h2 class="overlay-title">Quiet Moments With You</h2>
       <p class="overlay-message">The best moments don't need words, just your presence.</p>
     </div>
-    <button class="glow-btn next">Next ❤️</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
@@ -98,24 +109,30 @@
         <p class="galaxy-line-3">My reason, my destination.</p>
       </div>
     </div>
-    <button class="glow-btn next">Next</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
 
 <section class="scene" id="scene6" data-theme="ocean" data-duration="4000">
   <div class="image-scene">
-    <img src="images/img9.jpg" alt="Adventures" class="scene-bg-img">
+    <img src="images/img12.jpg" alt="Adventures" class="scene-bg-img">
     <div class="scene-overlay"></div>
     <div class="overlay-text">
       <h2 class="overlay-title">Every Adventure With You</h2>
       <p class="overlay-message">You make the ordinary moments feel like extraordinary journeys.</p>
     </div>
-    <button class="glow-btn next">Next ❤️</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
-<!-- ===== SCENE 7: Slideshow Gallery — 8 seconds ===== -->
+
 <section class="scene" id="scene7" data-theme="pink" data-duration="8000">
   <div class="gallery-scene">
     <div class="slideshow-wrap">
@@ -123,11 +140,14 @@
       <div class="petals-container"></div>
     </div>
     <p id="caption" class="slide-caption">Every memory with you is treasured forever.</p>
-    <button class="glow-btn next">Next</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
-<!-- ===== SCENE 8: Full Image Scene — img6.jpg — 4 seconds ===== -->
+
 <section class="scene" id="scene8" data-theme="peach" data-duration="4000">
   <div class="image-scene">
     <img src="images/img9.jpg" alt="Laughter" class="scene-bg-img">
@@ -136,11 +156,14 @@
       <h2 class="overlay-title">Your Laughter is My Favorite Song</h2>
       <p class="overlay-message">You fill my days with light and endless joy.</p>
     </div>
-    <button class="glow-btn next">Next ❤️</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
-<!-- ===== SCENE 9: Heartbeat Interactive — 7 seconds ===== -->
+
 <section class="scene" id="scene9" data-theme="crimson" data-duration="7000">
   <div class="heartbeat-scene">
     <div class="pulse-glow"></div>
@@ -153,11 +176,14 @@
       <p class="beat-line-2">…whispers your name.</p>
       <p class="beat-line-3">You are my heartbeat.</p>
     </div>
-    <button class="glow-btn next">Next</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
-<!-- ===== SCENE 10: Love Letter Interactive — 8 seconds ===== -->
+
 <section class="scene" id="scene10" data-theme="mauve" data-duration="8000">
   <div class="letter-scene">
     <div class="envelope-wrapper">
@@ -179,19 +205,22 @@
         </div>
       </div>
     </div>
-    <button class="glow-btn next">Next</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
   </div>
 </section>
 
-<!-- ===== SCENE 11: The Final Promise — Constellation of Memories ===== -->
+
 <section class="scene" id="scene11" data-theme="gold-final" data-duration="25000">
   <div class="constellation-scene">
-    <!-- Central core glow effect -->
+   
     <div class="constellation-core" id="constellationCore"></div>
     
-    <!-- Main constellation container -->
+   
     <div class="constellation-stage" id="constellationStage">
-      <!-- SVG for connecting lines -->
+     
       <svg id="constellationSVG" class="constellation-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="const-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -209,7 +238,7 @@
         <g id="connectionLines" class="connection-lines"></g>
       </svg>
 
-      <!-- Memory photos arranged as constellation points -->
+   
       <div class="constellation-photos" id="constellationPhotos">
         <img src="images/img1.jpg" class="constellation-photo" alt="memory1" data-index="0">
         <img src="images/img2.jpg" class="constellation-photo" alt="memory2" data-index="1">
@@ -222,25 +251,27 @@
         <img src="images/img9.jpg" class="constellation-photo" alt="memory9" data-index="8">
         <img src="images/img10.jpg" class="constellation-photo" alt="memory10" data-index="9">
         <img src="images/img11.jpg" class="constellation-photo" alt="memory11" data-index="10">
+        <img src="images/img12.jpg" class="constellation-photo" alt="memory11" data-index="10">
+        <img src="images/img13.jpg" class="constellation-photo" alt="memory11" data-index="10">
       </div>
 
-      <!-- Floating particles -->
+      
       <div class="constellation-particles" id="constellationParticles"></div>
 
-      <!-- Final greeting -->
+      
       <div class="constellation-greeting" id="constellationGreeting">
-        <h1>✨ Happy New Year ✨</h1>
+        <h1>✨ Happy New Year 2026 ✨</h1>
         <p class="greeting-sub">Our love is written in the stars—a constellation of endless moments.</p>
       </div>
     </div>
 
-    <div class="final-controls">
-      <button class="glow-btn replay" onclick="location.reload()">🔄 Replay</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
     </div>
   </div>
 </section>
 
-<!-- ===== SCENE 12: The Final Promise (keeps the long closing duration) ===== -->
 <section class="scene" id="scene12" data-theme="gold-final" data-duration="295000">
   <div class="final-scene">
     <div class="photos-shower" id="floatingPhotos">
@@ -255,6 +286,8 @@
       <img src="images/img9.jpg" alt="Memory 9" class="shower-photo">
       <img src="images/img10.jpg" alt="Memory 10" class="shower-photo">
       <img src="images/img11.jpg" alt="Memory 11" class="shower-photo">
+      <img src="images/img12.jpg" alt="Memory 11" class="shower-photo">
+      <img src="images/img13.jpg" alt="Memory 11" class="shower-photo">
     </div>
     <div class="final-heart-glow"></div>
     <div class="final-content">
@@ -263,7 +296,214 @@
       <p class="final-thanks">Thank you for being my everything. I love you. 💕</p>
       <p class="final-quote">Here's to our forever story...</p>
     </div>
-    <button class="glow-btn replay" onclick="location.reload()">🔄 Replay</button>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 13: Memory Lane — Interactive Photo Carousel ===== -->
+<section class="scene" id="scene13" data-theme="warmth" data-duration="15000">
+  <div class="memory-lane-scene">
+    <div class="memory-wheel-container">
+      <div class="memory-wheel" id="memoryWheel">
+        <div class="memory-card">
+          <img src="images/img1.jpg" alt="Memory 1">
+          <p class="memory-text">Our first smile together</p>
+        </div>
+        <div class="memory-card">
+          <img src="images/img2.jpg" alt="Memory 2">
+          <p class="memory-text">Your beautiful soul</p>
+        </div>
+        <div class="memory-card">
+          <img src="images/img3.jpg" alt="Memory 3">
+          <p class="memory-text">Laughing at nothing</p>
+        </div>
+        <div class="memory-card">
+          <img src="images/img5.jpg" alt="Memory 4">
+          <p class="memory-text">Late night dreams</p>
+        </div>
+        <div class="memory-card">
+          <img src="images/img7.jpg" alt="Memory 5">
+          <p class="memory-text">Holding forever</p>
+        </div>
+      </div>
+    </div>
+    <div class="memory-lane-text">
+      <h2 class="memory-title">Every moment with you is a memory I treasure.</h2>
+      <p>From the smallest gestures to the biggest adventures,<br>you've painted my life with colors I never knew existed.</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 14: Your Impact on Me — Handwritten Style Letters ===== -->
+<section class="scene" id="scene14" data-theme="nostalgic" data-duration="12000">
+  <div class="impact-scene">
+    <div class="impact-letter">
+      <div class="letter-line">You've changed me in ways I can't describe.</div>
+      <div class="letter-line">Not because I was broken,</div>
+      <div class="letter-line">but because you made me whole.</div>
+      <br>
+      <div class="letter-line">You taught me that love isn't loud—</div>
+      <div class="letter-line">it's in the quiet moments,</div>
+      <div class="letter-line">in the way you listen,</div>
+      <div class="letter-line">in the comfort of your presence.</div>
+      <br>
+      <div class="letter-line special">You are my greatest adventure.</div>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 15: Our Timeline — Floating Timeline Animation ===== -->
+<section class="scene" id="scene15" data-theme="timeline" data-duration="13000">
+  <div class="timeline-scene">
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <div class="timeline-photo">
+          <img src="images/img6.jpg" alt="When We Met">
+        </div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">When We Met</h3>
+          <p>You walked in and everything changed.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-photo">
+          <img src="images/img5.jpg" alt="Where We Are">
+        </div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Where We Are</h3>
+          <p>Closer than I ever dreamed possible.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-photo">
+          <img src="images/img2.jpg" alt="Where We're Going">
+        </div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Where We're Going</h3>
+          <p>Building a lifetime of beautiful moments together.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 16: Secret Love Notes — Floating Messages ===== -->
+<section class="scene" id="scene16" data-theme="love-notes" data-duration="14000">
+  <div class="love-notes-scene">
+    <div class="notes-container" id="notesContainer">
+      <div class="floating-note">
+        <p>I love the way you make me feel safe.</p>
+      </div>
+      <div class="floating-note">
+        <p>Every day with you feels like a gift.</p>
+      </div>
+      <div class="floating-note">
+        <p>You're my favorite person to do nothing with.</p>
+      </div>
+      <div class="floating-note">
+        <p>In a world of millions, I choose you.</p>
+      </div>
+      <div class="floating-note">
+        <p>You make my heart skip in the best way.</p>
+      </div>
+      <div class="floating-note">
+        <p>Forever isn't long enough with you.</p>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEW SCENE 17: 3D Heart Particle Explosion ===== -->
+<section class="scene" id="scene17" data-theme="particles" data-duration="10000">
+  <div class="particle-heart-scene">
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+    <div class="particle-overlay-text">
+      <h2 class="particle-title">You Are My Universe</h2>
+      <p class="particle-message">Every atom of my being gravitates toward you.</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEW SCENE 18: Floating Polaroid Memories ===== -->
+<section class="scene" id="scene18" data-theme="memories" data-duration="12000">
+  <div class="polaroid-scene">
+    <div class="polaroid-container" id="polaroidContainer">
+      <div class="polaroid-card" data-img="img4.jpg">
+        <div class="polaroid-photo">
+          <img src="images/img4.jpg" alt="Memory">
+        </div>
+        <p class="polaroid-caption">Sweet moments</p>
+      </div>
+      <div class="polaroid-card" data-img="img6.jpg">
+        <div class="polaroid-photo">
+          <img src="images/img6.jpg" alt="Memory">
+        </div>
+        <p class="polaroid-caption">Endless laughter</p>
+      </div>
+      <div class="polaroid-card" data-img="img10.jpg">
+        <div class="polaroid-photo">
+          <img src="images/img10.jpg" alt="Memory">
+        </div>
+        <p class="polaroid-caption">Forever together</p>
+      </div>
+      <div class="polaroid-card" data-img="img11.jpg">
+        <div class="polaroid-photo">
+          <img src="images/img11.jpg" alt="Memory">
+        </div>
+        <p class="polaroid-caption">Beautiful soul</p>
+      </div>
+    </div>
+    <div class="polaroid-text">
+      <h2>Captured Moments, Infinite Love</h2>
+      <p>Each photo a heartbeat, each memory eternal.</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn next">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL SCENE 19: The End - Replay ===== -->
+<section class="scene" id="scene19" data-theme="ending" data-duration="0">
+  <div class="ending-scene">
+    <div class="ending-sparkles" id="endingSparkles"></div>
+    <div class="ending-content">
+      <h1 class="ending-title">Our Story Continues...</h1>
+      <p class="ending-message">This is just the beginning of forever.</p>
+      <p class="ending-year">2026 & Beyond 💫</p>
+      <div class="ending-heart">💕</div>
+    </div>
+    <div class="nav-buttons">
+      <button class="glow-btn prev">← Prev</button>
+      <button class="glow-btn replay" onclick="location.reload()">🔄 Replay Our Story</button>
+    </div>
   </div>
 </section>
 
